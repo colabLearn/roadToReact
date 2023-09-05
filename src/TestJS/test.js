@@ -40,4 +40,21 @@ const over30 = people.filter(function(person){
 })
 
 
-console.log(over30)
+/*
+REDUCE:
+The reduce method is used to reduce your array
+into a single value.
+Let's say we want to find the total of the age of 
+all the people in our list i.e. total of the age. 
+For example in our case, 35+26+55.
+*/
+const totalAge = people.reduce(function(total, person){
+    return total + person.age
+}, 0)
+/*
+total is the variable initialized to zero, --> " '...}, 0)' in the code
+then each person age is added to total as the function iterate the people
+list. 
+*/
+
+console.log(totalAge)
