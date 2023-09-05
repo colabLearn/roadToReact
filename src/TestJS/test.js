@@ -33,8 +33,10 @@ const names = people.map(function(person){
  Applying filter to return only person object in the list
  that their age is over 30.
 */
-const over30 = people.filter(person =>{
+const over30 = people.filter(function(person){
     return person.age>=30
+}).map(function(person){
+    return person.name
 })
 
 
