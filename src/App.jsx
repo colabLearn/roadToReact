@@ -1,6 +1,8 @@
 //import * as React from 'react'
+import PropTypes from 'prop-types'
 
-const list = [
+
+const list1 = [
   {
     title: 'Road To React',
   url: 'https://reactjs.org',
@@ -32,7 +34,7 @@ function App() {
      <Search />
 
       <hr />
-      <List/>
+      <List list={list1}/>
     </div>
   );
   
@@ -48,7 +50,7 @@ function Search(){
 
   )
 }
-function List (){
+function List ({list}){
   return (
     <table>
     <tr>
@@ -58,7 +60,7 @@ function List (){
         <th><strong>Points</strong></th>
       </tr>
       {list.map(function(item){
-        return          (
+        return        (
             <tr key={item.objectID}>
             <td><a href={item.url}>{item.title}</a></td>
             <td>{item.author}</td>
@@ -73,5 +75,14 @@ function List (){
       })}
     </table>
   )
+}
+
+/*
+ The two error below persists until i added the List.propTypes....
+  53:17  error  'list' is missing in props validation      react/prop-types
+  62:13  error  'list.map' is missing in props validation  react/prop-types
+*/
+List.propTypes = {
+  list: PropTypes.array.isRequired,
 }
 export default App
