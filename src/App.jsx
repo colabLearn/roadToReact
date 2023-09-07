@@ -33,31 +33,35 @@ function App() {
       <input id="search" type="text"></input>
 
       <hr />
-      <table>
-      <tr>
-          <th><strong>Title</strong></th>
-          <th><strong>Author</strong></th>
-          <th><strong>Num of Comments</strong></th>
-          <th><strong>Points</strong></th>
-        </tr>
-        {list.map(function(item){
-          return          (
-              <tr key={item.objectID}>
-              <td><a href={item.url}>{item.title}</a></td>
-              <td>{item.author}</td>
-              <td>{item.num_comments}</td>
-              <td>{item.points}</td>
-            </tr>
-           
-            /*</div><li key={item.objectID}>{item.title}</li>*/
-
-          )  
-
-        })}
-      </table>
+      <List/>
     </div>
   );
   
 }
+function List (){
+  return (
+    <table>
+    <tr>
+        <th><strong>Title</strong></th>
+        <th><strong>Author</strong></th>
+        <th><strong>Num of Comments</strong></th>
+        <th><strong>Points</strong></th>
+      </tr>
+      {list.map(function(item){
+        return          (
+            <tr key={item.objectID}>
+            <td><a href={item.url}>{item.title}</a></td>
+            <td>{item.author}</td>
+            <td>{item.num_comments}</td>
+            <td>{item.points}</td>
+          </tr>
+         
+          /*</div><li key={item.objectID}>{item.title}</li>*/
 
+        )  
+
+      })}
+    </table>
+  )
+}
 export default App
