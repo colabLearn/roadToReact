@@ -29,14 +29,24 @@ function App() {
     <div>
       <h1>My Hacker Stories</h1>
 
-      <label htmlFor='search'> Search</label>
-      <input id="search" type="text"></input>
+     <Search />
 
       <hr />
       <List/>
     </div>
   );
   
+}
+
+function Search(){
+  return(
+     <div>
+       <label htmlFor='search'> Search</label>
+     <input id="search" type="text"></input>
+
+     </div>
+
+  )
 }
 function List (){
   return (
