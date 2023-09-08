@@ -23,11 +23,8 @@ const list1 = [
 
 ]
 
-function App() {
-
-  //You can do something in between
-  return (
-    
+const  App = () =>
+  //You can do something in between   
     <div>
       <h1>My Hacker Stories</h1>
 
@@ -36,31 +33,27 @@ function App() {
       <hr />
       <List list={list1}/>
     </div>
-  );
   
-}
+  
 
-function Search(){
-  return(
-     <div>
+const  Search = ()=> 
+       <div>
        <label htmlFor='search'> Search</label>
      <input id="search" type="text"></input>
 
      </div>
 
-  )
-}
-function List ({list}){
-  return (
-    <table>
+  
+
+const List =  ({list})=>
+   <table>
     <tr>
         <th><strong>Title</strong></th>
         <th><strong>Author</strong></th>
         <th><strong>Num of Comments</strong></th>
         <th><strong>Points</strong></th>
       </tr>
-      {list.map(function(item){
-        return        (
+      {list.map((item)=> (
             <tr key={item.objectID}>
             <td><a href={item.url}>{item.title}</a></td>
             <td>{item.author}</td>
@@ -70,12 +63,10 @@ function List ({list}){
          
           /*</div><li key={item.objectID}>{item.title}</li>*/
 
-        )  
-
-      })}
+        ))}
     </table>
-  )
-}
+  
+
 
 /*
  The two error below persists until i added the List.propTypes....
